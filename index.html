@@ -1,212 +1,296 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>바다 여행 준비</title>
+    <title>강원도 여행 일정</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <h1 id="trip-title">바다 여행 준비</h1>
-        <p id="trip-date"></p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>강원도 여행 일정</h1>
+            <p class="date">토요일 오전 9시 30분부터 여행 정보</p>
+        </header>
 
-    <nav id="tab-navigation">
-        <ul class="tabs">
-            <li class="tab active" data-tab="basic-info">기본 정보</li>
-            <li class="tab" data-tab="schedule">일정 및 활동</li>
-            <li class="tab" data-tab="accommodation">숙소 및 식사</li>
-            <li class="tab" data-tab="packing">짐 및 준비물</li>
-            <li class="tab" data-tab="expenses">비용 및 정산</li>
-            <li class="tab" data-tab="contents">컨텐츠</li>
-            <li class="tab" data-tab="misc">기타</li>
-        </ul>
-    </nav>
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="schedule">
+                <i class="fas fa-calendar-alt"></i>
+                일정
+            </button>
+            <button class="tab-btn" data-tab="shopping">
+                <i class="fas fa-shopping-cart"></i>
+                준비물
+            </button>
+            <button class="tab-btn" data-tab="accommodation">
+                <i class="fas fa-home"></i>
+                숙소
+            </button>
+        </nav>
 
-    <main>
-        <!-- 1. 기본 정보 탭 -->
-        <section id="basic-info" class="tab-content active">
-            <div class="section-container">
-                <h2>여행 개요</h2>
-                <div class="info-box">
-                    <div class="info-item">
-                        <label>여행 제목:</label>
-                        <span id="trip-name"></span>
-                    </div>
-                    <div class="info-item">
-                        <label>일정:</label>
-                        <span id="trip-period"></span>
-                    </div>
-                    <div class="info-item">
-                        <label>주요 목적지:</label>
-                        <span id="trip-destination"></span>
-                    </div>
-                </div>
-
-                <h2>참가자 정보</h2>
-                <div class="info-box" id="participants-list">
-                    <!-- 참가자 정보가 동적으로 추가됩니다 -->
-                </div>
-
-                <h2>차량 정보</h2>
-                <div class="info-box" id="vehicles-list">
-                    <!-- 차량 정보가 동적으로 추가됩니다 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. 일정 및 활동 탭 -->
-        <section id="schedule" class="tab-content">
-            <div class="section-container">
-                <h2>날짜별 일정</h2>
-                <div class="schedule-container" id="schedule-list">
-                    <!-- 일정이 동적으로 추가됩니다 -->
-                </div>
-
-                <div class="rain-plan">
-                    <h2>우천 시 대체 일정</h2>
-                    <button id="toggle-rain-plan" class="toggle-btn">보기/숨기기</button>
-                    <div id="rain-plan-content" class="hidden">
-                        <div id="rain-plans-list">
-                            <!-- 우천시 일정이 동적으로 추가됩니다 -->
+        <div class="tab-content active" id="schedule">
+            <section class="schedule">
+                <div class="time-block">
+                    <h2>9:30 ~ 10:00</h2>
+                    <div class="event">
+                        <h3>카페 집결, 차량 렌탈 편성 및 커피 구매 후 출발</h3>
+                        <div class="location">
+                            <p><i class="fas fa-map-marker-alt"></i> 영일중김자옥상이</p>
+                            <p class="address" data-clipboard="강원 속초시 영랑로419번길 30 지하2층 208호">
+                                <i class="fas fa-copy"></i> 
+                                강원 속초시 영랑로419번길 30 지하2층 208호
+                            </p>
+                            <a href="https://naver.me/GubJDQNb" target="_blank" class="map-link">
+                                <i class="fas fa-location-arrow"></i> 길찾기
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <div class="time-block">
+                    <h2>10:00 ~ 13:00</h2>
+                    <div class="event">
+                        <h3>중간에 휴게소 1회 경유 포함 (시기는 그때 조정)</h3>
+                        <p>시간은 대략적인 예측이며, 교통상황에 따라 변동 가능성이 있음</p>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h2>13:00 ~ 14:30</h2>
+                    <div class="event">
+                        <h3>팀별 2개로 나뉘 각자 물건 구매하러 이동</h3>
+                        <div class="sub-event">
+                            <h4>PX팀</h4>
+                            <ul>
+                                <li>식량에서 이동해 약 10분 소요</li>
+                                <li>먹자 도착해서 술, 과자, 물, 라면 등 지원히 구매 가능한 물건을 구매 후 카페에 얼르트</li>
+                                <div class="location">
+                                    <p class="address" data-clipboard="강원 고성군 토성면 중앙로 642-22">
+                                        <i class="fas fa-copy"></i> 
+                                        강원 고성군 토성면 중앙로 642-22
+                                    </p>
+                                    <a href="https://naver.me/FV7YAt7V" target="_blank" class="map-link">
+                                        <i class="fas fa-location-arrow"></i> 길찾기
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="sub-event">
+                            <h4>이마트 팀</h4>
+                            <ul>
+                                <li>PX에서 구매 내역을 확인 후 고기, 맥키트 등을 추가 구매</li>
+                                <div class="location">
+                                    <p class="address" data-clipboard="강원 고성군 토성면 중앙로 642-22">
+                                        <i class="fas fa-copy"></i> 
+                                        강원 고성군 토성면 중앙로 642-22
+                                    </p>
+                                    <a href="https://naver.me/FV7YAt7V" target="_blank" class="map-link">
+                                        <i class="fas fa-location-arrow"></i> 길찾기
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-block">
+                    <h2>14:30 ~ 15:00</h2>
+                    <div class="event">
+                        <h3>숙소 입실</h3>
+                        <p>구비 물품: 웨이드라이어, 샴푸, 수건, 비누 등</p>
+                        <div class="location">
+                            <p class="address" data-clipboard="강원특별자치도 양양군 강현면 정암길 35">
+                                <i class="fas fa-copy"></i> 
+                                강원특별자치도 양양군 강현면 정암길 35
+                            </p>
+                            <a href="https://naver.me/Gwp4QAju" target="_blank" class="map-link">
+                                <i class="fas fa-location-arrow"></i> 네이버 지도
+                            </a>
+                            <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb44771" target="_blank" class="map-link">
+                                <i class="fas fa-home"></i> 에어비앤비
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="shopping">
+            <section class="shopping-list">
+                <div class="category">
+                    <h2><i class="fas fa-utensils"></i> 식료품</h2>
+                    <ul>
+                        <li>
+                            <span class="item">술</span>
+                            <span class="team">PX팀</span>
+                        </li>
+                        <li>
+                            <span class="item">과자</span>
+                            <span class="team">PX팀</span>
+                        </li>
+                        <li>
+                            <span class="item">물</span>
+                            <span class="team">PX팀</span>
+                        </li>
+                        <li>
+                            <span class="item">라면</span>
+                            <span class="team">PX팀</span>
+                        </li>
+                        <li>
+                            <span class="item">고기</span>
+                            <span class="team">이마트팀</span>
+                        </li>
+                        <li>
+                            <span class="item">맥키트</span>
+                            <span class="team">이마트팀</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h2><i class="fas fa-shower"></i> 세면도구</h2>
+                    <ul>
+                        <li>
+                            <span class="item">웨이드라이어</span>
+                            <span class="status">필수</span>
+                        </li>
+                        <li>
+                            <span class="item">샴푸</span>
+                            <span class="status">필수</span>
+                        </li>
+                        <li>
+                            <span class="item">수건</span>
+                            <span class="status">필수</span>
+                        </li>
+                        <li>
+                            <span class="item">비누</span>
+                            <span class="status">필수</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h2><i class="fas fa-gamepad"></i> 게임 준비물</h2>
+                    <ul>
+                        <li>
+                            <span class="item">게임 세팅도구</span>
+                        </li>
+                        <li>
+                            <span class="item">직솔</span>
+                        </li>
+                        <li>
+                            <span class="item">물클레식</span>
+                        </li>
+                        <li>
+                            <span class="item">클린컵 오일</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h2><i class="fas fa-medkit"></i> 상비약</h2>
+                    <ul>
+                        <li>
+                            <span class="item">멀미약</span>
+                            <span class="status">권장</span>
+                        </li>
+                        <li>
+                            <span class="item">숙취해소제</span>
+                            <span class="status">권장</span>
+                        </li>
+                        <li>
+                            <span class="item">일회용기저귀</span>
+                            <span class="status">권장</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="accommodation">
+            <section class="accommodation-info">
+                <div class="accommodation-header">
+                    <h2>숙소 정보</h2>
+                    <p class="address" data-clipboard="강원특별자치도 양양군 강현면 정암길 35">
+                        <i class="fas fa-map-marker-alt"></i>
+                        강원특별자치도 양양군 강현면 정암길 35
+                    </p>
+                </div>
+
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <img src="img/camp/1.jpg" alt="숙소 이미지 1" class="gallery-img" loading="lazy">
+                        <img src="img/camp/2.jpg" alt="숙소 이미지 2" class="gallery-img" loading="lazy">
+                        <img src="img/camp/3.jpg" alt="숙소 이미지 3" class="gallery-img" loading="lazy">
+                        <img src="img/camp/4.jpg" alt="숙소 이미지 4" class="gallery-img" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="accommodation-links">
+                    <a href="https://naver.me/Gwp4QAju" target="_blank" class="link-btn">
+                        <i class="fas fa-map"></i>
+                        네이버 지도에서 보기
+                    </a>
+                    <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb44771" target="_blank" class="link-btn">
+                        <i class="fab fa-airbnb"></i>
+                        에어비앤비에서 보기
+                    </a>
+                </div>
+
+                <div class="accommodation-details">
+                    <div class="detail-item">
+                        <h3><i class="fas fa-clock"></i> 체크인/체크아웃</h3>
+                        <p>체크인: 14:30</p>
+                        <p>체크아웃: 다음날 11:00</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3><i class="fas fa-bed"></i> 숙소 시설</h3>
+                        <ul>
+                            <li>침대 4개</li>
+                            <li>화장실 2개</li>
+                            <li>주방 시설</li>
+                            <li>무료 주차</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3><i class="fas fa-info-circle"></i> 주의사항</h3>
+                        <ul>
+                            <li>실내 흡연 금지</li>
+                            <li>반려동물 동반 불가</li>
+                            <li>22시 이후 소음 주의</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 비밀번호 모달 -->
+        <div class="password-modal" id="passwordModal">
+            <div class="modal-content">
+                <h2>🔒 콘텐츠 잠금</h2>
+                <p class="lock-message">5/2 18:00 공개 예정입니다.</p>
+                <div class="password-input-container">
+                    <input type="password" id="passwordInput" placeholder="비밀번호를 입력하세요" maxlength="4">
+                    <button id="submitPassword">확인</button>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- 3. 숙소 및 식사 탭 -->
-        <section id="accommodation" class="tab-content">
-            <div class="section-container">
-                <h2>숙소 정보</h2>
-                <div class="info-box" id="accommodation-info">
-                    <!-- 숙소 정보가 동적으로 추가됩니다 -->
-                </div>
+        <!-- 이미지 뷰어 모달 -->
+        <div class="image-modal" id="imageModal">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="확대된 이미지">
+            <button class="nav-btn prev-btn">&lt;</button>
+            <button class="nav-btn next-btn">&gt;</button>
+        </div>
 
-                <h2>식사 계획</h2>
-                <div class="info-box" id="meal-plans">
-                    <!-- 식사 계획이 동적으로 추가됩니다 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. 짐 및 준비물 탭 -->
-        <section id="packing" class="tab-content">
-            <div class="section-container">
-                <h2>공용 준비물</h2>
-                <div class="checklist" id="shared-items">
-                    <!-- 공용 준비물 목록이 동적으로 추가됩니다 -->
-                </div>
-
-                <h2>개인 준비물</h2>
-                <div class="accordion-container" id="personal-items">
-                    <!-- 개인 준비물 아코디언이 동적으로 추가됩니다 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. 비용 및 정산 탭 -->
-        <section id="expenses" class="tab-content">
-            <div class="section-container">
-                <h2>예상 비용</h2>
-                <div class="expenses-table-container">
-                    <table class="expenses-table">
-                        <thead>
-                            <tr>
-                                <th>항목</th>
-                                <th>금액</th>
-                                <th>담당자</th>
-                            </tr>
-                        </thead>
-                        <tbody id="expenses-list">
-                            <!-- 비용 항목이 동적으로 추가됩니다 -->
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>총 합계</td>
-                                <td id="total-expense">0원</td>
-                                <td></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <h2>정산 정보</h2>
-                <div class="info-box" id="settlement-info">
-                    <!-- 정산 정보가 동적으로 추가됩니다 -->
-                </div>
-
-                <h2>송금 확인</h2>
-                <div class="checklist" id="payment-status">
-                    <!-- 송금 상태가 동적으로 추가됩니다 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. 컨텐츠 탭 -->
-        <section id="contents" class="tab-content">
-            <div class="section-container">
-                <h2>차량 내 즐길거리</h2>
-
-                <h3>플레이리스트</h3>
-                <div class="content-list" id="playlist-items">
-                    <!-- 플레이리스트가 동적으로 추가됩니다 -->
-                </div>
-                <div class="add-item">
-                    <input type="text" id="new-song" placeholder="노래 추가하기...">
-                    <button id="add-song">추가</button>
-                </div>
-
-                <h3>게임</h3>
-                <div class="content-list" id="game-items">
-                    <!-- 게임 목록이 동적으로 추가됩니다 -->
-                </div>
-                <div class="add-item">
-                    <input type="text" id="new-game" placeholder="게임 추가하기...">
-                    <button id="add-game">추가</button>
-                </div>
-
-                <h3>영상</h3>
-                <div class="content-list" id="video-items">
-                    <!-- 영상 목록이 동적으로 추가됩니다 -->
-                </div>
-                <div class="add-item">
-                    <input type="text" id="new-video" placeholder="영상 추가하기...">
-                    <button id="add-video">추가</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. 기타 탭 -->
-        <section id="misc" class="tab-content">
-            <div class="section-container">
-                <h2>운전 관련 정보</h2>
-                <div class="info-box" id="driving-info">
-                    <!-- 운전 정보가 동적으로 추가됩니다 -->
-                </div>
-
-                <h2>메모</h2>
-                <div class="memo-container">
-                    <textarea id="memo-text" placeholder="자유롭게 메모를 작성하세요..."></textarea>
-                    <button id="save-memo">저장</button>
-                </div>
-                <div id="saved-memos">
-                    <!-- 저장된 메모가 동적으로 추가됩니다 -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>마지막 업데이트: <span id="last-updated"></span></p>
-    </footer>
-
+        <footer>
+            <p>회비 미 입금자 입금 요망</p>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
-
-</html>
+</html> 
