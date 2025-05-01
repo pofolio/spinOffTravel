@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordModal = document.getElementById('passwordModal');
     const passwordInput = document.getElementById('passwordInput');
     const submitPassword = document.getElementById('submitPassword');
+    const errorMessage = document.querySelector('.error-message');
     const CORRECT_PASSWORD = '6739';
+    let targetTab = null;
     
     // 이미지 모달 관련 변수
     const imageModal = document.getElementById('imageModal');
@@ -27,17 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const targetId = tab.getAttribute('data-tab');
-            console.log('Clicked tab:', targetId); // 디버깅용
-
-            // 일정 탭이 아닌 경우 인증 확인
-            if (targetId !== 'schedule' && !isAuthenticated) {
-                console.log('Authentication required'); // 디버깅용
+            const requirePassword = tab.getAttribute('data-require-password') === 'true';
+            
+            if (requirePassword) {
+                targetTab = targetId;
                 passwordModal.style.display = 'flex';
-                return;
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+            } else {
+                switchTab(targetId);
             }
-
-            // 탭 전환
-            switchTab(tab, targetId);
         });
     });
 
@@ -50,45 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function checkPassword() {
-        console.log('Checking password:', passwordInput.value); // 디버깅용
         if (passwordInput.value === CORRECT_PASSWORD) {
-            localStorage.setItem('isAuthenticated', 'true');
             passwordModal.style.display = 'none';
-            
-            // 마지막으로 클릭한 탭으로 이동
-            const activeTab = document.querySelector('.tab-btn.active');
-            const targetTab = activeTab || document.querySelector('.tab-btn[data-tab="shopping"]');
-            const targetId = targetTab.getAttribute('data-tab');
-            
-            console.log('Switching to tab after authentication:', targetId); // 디버깅용
-            switchTab(targetTab, targetId);
+            errorMessage.style.display = 'none';
+            if (targetTab) {
+                switchTab(targetTab);
+            }
         } else {
-            passwordInput.value = '';
-            passwordInput.placeholder = '비밀번호가 틀렸습니다';
-            passwordInput.classList.add('error');
-            setTimeout(() => {
-                passwordInput.placeholder = '비밀번호를 입력하세요';
-                passwordInput.classList.remove('error');
-            }, 1500);
+            errorMessage.style.display = 'block';
         }
     }
 
     // 탭 전환 함수
-    function switchTab(tab, targetId) {
-        console.log('Switching to tab:', targetId); // 디버깅용
-
+    function switchTab(tabId) {
         // 활성 탭 변경
         tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // 컨텐츠 변경
-        contents.forEach(content => {
-            content.classList.remove('active');
-            if (content.id === targetId) {
-                content.classList.add('active');
-                console.log('Activated content:', content.id); // 디버깅용
-            }
-        });
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // 선택된 탭과 콘텐츠 활성화
+        document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+        document.getElementById(tabId).classList.add('active');
     }
 
     // 이미지 갤러리 기능
@@ -149,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialTab = document.querySelector('.tab-btn.active');
     if (initialTab) {
         const initialTabId = initialTab.getAttribute('data-tab');
-        switchTab(initialTab, initialTabId);
+        switchTab(initialTabId);
     }
 
     // 주소 복사 기능
@@ -248,5 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
         block.style.transform = 'translateY(20px)';
         block.style.transition = 'all 0.5s ease';
         observer.observe(block);
+    });
+
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', function(e) {
+        if (e.target === passwordModal) {
+            passwordModal.style.display = 'none';
+            errorMessage.style.display = 'none';
+        }
     });
 }); 

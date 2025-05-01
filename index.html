@@ -11,19 +11,19 @@
     <div class="container">
         <header>
             <h1>강원도 여행 일정</h1>
-            <p class="date">토요일 오전 9시 30분부터 여행 정보</p>
+            <p class="date">토요일 오전 9시 30분까지 집결</p>
         </header>
 
         <nav class="tabs">
-            <button class="tab-btn active" data-tab="schedule">
+            <button class="tab-btn active" data-tab="schedule" data-require-password="false">
                 <i class="fas fa-calendar-alt"></i>
                 일정
             </button>
-            <button class="tab-btn" data-tab="shopping">
+            <button class="tab-btn" data-tab="shopping" data-require-password="true">
                 <i class="fas fa-shopping-cart"></i>
                 준비물
             </button>
-            <button class="tab-btn" data-tab="accommodation">
+            <button class="tab-btn" data-tab="accommodation" data-require-password="true">
                 <i class="fas fa-home"></i>
                 숙소
             </button>
@@ -32,14 +32,30 @@
         <div class="tab-content active" id="schedule">
             <section class="schedule">
                 <div class="time-block">
+                    <h2>집결 장소</h2>
+                    <div class="event">
+                        <h3>메가MGC커피 동두천지행동원점</h3>
+                        <div class="location">
+                            <p class="address" data-clipboard="경기 동두천시 지행동 100-1">
+                                <i class="fas fa-copy"></i> 
+                                경기 동두천시 지행동 100-1
+                            </p>
+                            <a href="https://naver.me/F9NIsLf6" target="_blank" class="map-link">
+                                <i class="fas fa-location-arrow"></i> 길찾기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-block">
                     <h2>9:30 ~ 10:00</h2>
                     <div class="event">
-                        <h3>카페 집결, 차량 렌탈 편성 및 커피 구매 후 출발</h3>
+                        <h3>카페 집결, 차량 랜덤 편성 및 커피 구매 후 출발</h3>
                         <div class="location">
-                            <p><i class="fas fa-map-marker-alt"></i> 영일중김자옥상이</p>
-                            <p class="address" data-clipboard="강원 속초시 영랑로419번길 30 지하2층 208호">
+                            <p><i class="fas fa-map-marker-alt"></i> 영랑호감자옹심이</p>
+                            <p class="address" data-clipboard="강원 속초시 중앙로419번길 30 지하2층 208호">
                                 <i class="fas fa-copy"></i> 
-                                강원 속초시 영랑로419번길 30 지하2층 208호
+                                강원 속초시 중앙로419번길 30 지하2층 208호
                             </p>
                             <a href="https://naver.me/GubJDQNb" target="_blank" class="map-link">
                                 <i class="fas fa-location-arrow"></i> 길찾기
@@ -51,7 +67,7 @@
                 <div class="time-block">
                     <h2>10:00 ~ 13:00</h2>
                     <div class="event">
-                        <h3>중간에 휴게소 1회 경유 포함 (시기는 그때 조정)</h3>
+                        <h3>중간에 휴게소 1회 경유 포함 (시기는 그때 조절)</h3>
                         <p>시간은 대략적인 예측이며, 교통상황에 따라 변동 가능성이 있음</p>
                     </div>
                 </div>
@@ -59,12 +75,12 @@
                 <div class="time-block">
                     <h2>13:00 ~ 14:30</h2>
                     <div class="event">
-                        <h3>팀별 2개로 나뉘 각자 물건 구매하러 이동</h3>
+                        <h3>팀을 2개로 나눠 각자 물건 구매하러 이동</h3>
                         <div class="sub-event">
                             <h4>PX팀</h4>
                             <ul>
-                                <li>식량에서 이동해 약 10분 소요</li>
-                                <li>먹자 도착해서 술, 과자, 물, 라면 등 지원히 구매 가능한 물건을 구매 후 카페에 얼르트</li>
+                                <li>식당에서 이동에 약 10분 소요</li>
+                                <li>먼저 도착해서 술, 햇반, 물, 라면 등 저렴히 구매 가능한 물건을 구매 후 카톡에 업로드</li>
                                 <div class="location">
                                     <p class="address" data-clipboard="강원 고성군 토성면 중앙로 642-22">
                                         <i class="fas fa-copy"></i> 
@@ -79,7 +95,7 @@
                         <div class="sub-event">
                             <h4>이마트 팀</h4>
                             <ul>
-                                <li>PX에서 구매 내역을 확인 후 고기, 맥키트 등을 추가 구매</li>
+                                <li>PX에서 구매 내역을 확인 후 고기, 밀키트 등을 추가 구매</li>
                                 <div class="location">
                                     <p class="address" data-clipboard="강원 고성군 토성면 중앙로 642-22">
                                         <i class="fas fa-copy"></i> 
@@ -98,16 +114,16 @@
                     <h2>14:30 ~ 15:00</h2>
                     <div class="event">
                         <h3>숙소 입실</h3>
-                        <p>구비 물품: 웨이드라이어, 샴푸, 수건, 비누 등</p>
+                        <p>구비 물품: 헤어드라이어, 샴푸, 수건, 비누 등</p>
                         <div class="location">
-                            <p class="address" data-clipboard="강원특별자치도 양양군 강현면 정암길 35">
+                            <p class="address" data-clipboard="강원특별자치도 양양군 강현면 정암1길 35">
                                 <i class="fas fa-copy"></i> 
-                                강원특별자치도 양양군 강현면 정암길 35
+                                강원특별자치도 양양군 강현면 정암1길 35
                             </p>
                             <a href="https://naver.me/Gwp4QAju" target="_blank" class="map-link">
                                 <i class="fas fa-location-arrow"></i> 네이버 지도
                             </a>
-                            <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb44771" target="_blank" class="map-link">
+                            <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb447711" target="_blank" class="map-link">
                                 <i class="fas fa-home"></i> 에어비앤비
                             </a>
                         </div>
@@ -271,11 +287,12 @@
         <div class="password-modal" id="passwordModal">
             <div class="modal-content">
                 <h2>🔒 콘텐츠 잠금</h2>
-                <p class="lock-message">5/2 18:00 공개 예정입니다.</p>
+                <p class="lock-message">비밀번호를 입력하세요</p>
                 <div class="password-input-container">
                     <input type="password" id="passwordInput" placeholder="비밀번호를 입력하세요" maxlength="4">
                     <button id="submitPassword">확인</button>
                 </div>
+                <p class="error-message" style="display: none; color: red;">비밀번호가 일치하지 않습니다.</p>
             </div>
         </div>
 
