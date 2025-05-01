@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 passwordModal.style.display = 'flex';
                 passwordInput.value = '';
                 errorMessage.style.display = 'none';
+                // 입력란에 자동 포커스
+                setTimeout(() => {
+                    passwordInput.focus();
+                }, 100);
             } else {
                 switchTab(targetId);
             }
