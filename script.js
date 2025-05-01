@@ -276,4 +276,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 초기 버튼 상태 설정
     prevBtn.style.opacity = '0.5';
+
+    // 구매 항목 관련 기능
+    const addItemBtn = document.getElementById('addItemBtn');
+    const addItemModal = document.getElementById('addItemModal');
+    const addItemForm = document.getElementById('addItemForm');
+    const shoppingTableBody = document.getElementById('shoppingTableBody');
+    const totalAmountElement = document.getElementById('totalAmount');
+    const cancelBtn = document.querySelector('.cancel-btn');
+
+    // 모달 열기
+    addItemBtn.addEventListener('click', function() {
+        addItemModal.style.display = 'block';
+    });
+
+    // 모달 닫기
+    cancelBtn.addEventListener('click', function() {
+        addItemModal.style.display = 'none';
+        addItemForm.reset();
+    });
+
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', function(event) {
+        if (event.target === addItemModal) {
+            addItemModal.style.display = 'none';
+            addItemForm.reset();
+        }
+    });
+
+    // 새 항목 추가
+    addItemForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const itemName = document.getElementById('itemName').value;
+        const itemQuantity = parseInt(document.getElementById('itemQuantity').value);
+        const itemPrice = parseInt(document.getElementById('itemPrice').value);
+        const totalPrice = itemQuantity * itemPrice;
+
+        // 테이블에 새 행 추가
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${itemName}</td>
+            <td>${itemQuantity}</td>
+            <td>${itemPrice.toLocaleString()}원</td>
+            <td>${totalPrice.toLocaleString()}원</td>
+            <td>
+                <button class="delete-btn" onclick="deleteItem(this)">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        `;
+
+        shoppingTableBody.appendChild(newRow);
+        
+        // 총액 업데이트
+        updateTotalAmount();
+        
+        // 모달 닫기 및 폼 초기화
+        addItemModal.style.display = 'none';
+        addItemForm.reset();
+    });
+
+    // 항목 삭제
+    window.deleteItem = function(button) {
+        const row = button.parentNode.parentNode;
+        row.remove();
+        updateTotalAmount();
+    };
+
+    // 총액 계산
+    function updateTotalAmount() {
+        let total = 0;
+        const rows = shoppingTableBody.getElementsByTagName('tr');
+        
+        for (let row of rows) {
+            const cells = row.getElementsByTagName('td');
+            if (cells.length >= 4) {
+                const totalCell = cells[3].textContent;
+                total += parseInt(totalCell.replace(/[^0-9]/g, ''));
+            }
+        }
+        
+        totalAmountElement.textContent = total.toLocaleString() + '원';
+    }
 }); 
