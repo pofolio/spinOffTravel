@@ -239,4 +239,37 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage.style.display = 'none';
         }
     });
+
+    // 이미지 갤러리 슬라이드 기능
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const currentSlideSpan = document.querySelector('.current-slide');
+    const totalSlidesSpan = document.querySelector('.total-slides');
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('.gallery-slide').length;
+
+    // 총 슬라이드 수 표시
+    totalSlidesSpan.textContent = totalSlides;
+
+    // 슬라이드 이동 함수
+    function moveSlide(direction) {
+        if (direction === 'next' && currentSlide < totalSlides - 1) {
+            currentSlide++;
+        } else if (direction === 'prev' && currentSlide > 0) {
+            currentSlide--;
+        }
+        
+        galleryGrid.style.transform = `translateX(-${currentSlide * 100}%)`;
+        currentSlideSpan.textContent = currentSlide + 1;
+        
+        // 버튼 활성화/비활성화
+        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+    }
+
+    // 버튼 이벤트 리스너
+    prevBtn.addEventListener('click', () => moveSlide('prev'));
+    nextBtn.addEventListener('click', () => moveSlide('next'));
+
+    // 초기 버튼 상태 설정
+    prevBtn.style.opacity = '0.5';
 }); 
