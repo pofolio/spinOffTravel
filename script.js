@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageModal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const closeModal = document.querySelector('.close-modal');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const modalPrevBtn = document.querySelector('.image-modal-content .prev-btn');
+    const modalNextBtn = document.querySelector('.image-modal-content .next-btn');
     let currentImageIndex = 0;
     const images = document.querySelectorAll('.gallery-img');
 
@@ -34,19 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
             currentImageIndex = index;
             modalImage.src = img.src;
             imageModal.style.display = 'block';
+            imageModal.classList.add('active');
         });
     });
 
     closeModal.addEventListener('click', () => {
         imageModal.style.display = 'none';
+        imageModal.classList.remove('active');
     });
 
-    prevBtn.addEventListener('click', () => {
+    // 이전 이미지로 이동
+    modalPrevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
         modalImage.src = images[currentImageIndex].src;
     });
 
-    nextBtn.addEventListener('click', () => {
+    // 다음 이미지로 이동
+    modalNextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         currentImageIndex = (currentImageIndex + 1) % images.length;
         modalImage.src = images[currentImageIndex].src;
     });
@@ -56,10 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (imageModal.style.display === 'block') {
             if (e.key === 'Escape') {
                 imageModal.style.display = 'none';
+                imageModal.classList.remove('active');
             } else if (e.key === 'ArrowLeft') {
-                prevBtn.click();
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                modalImage.src = images[currentImageIndex].src;
             } else if (e.key === 'ArrowRight') {
-                nextBtn.click();
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                modalImage.src = images[currentImageIndex].src;
             }
         }
     });
@@ -103,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryGrid = document.querySelector('.gallery-grid');
     const currentSlideSpan = document.querySelector('.current-slide');
     const totalSlidesSpan = document.querySelector('.total-slides');
+    const galleryPrevBtn = document.querySelector('.gallery-container .prev-btn');
+    const galleryNextBtn = document.querySelector('.gallery-container .next-btn');
     let currentSlide = 0;
     const totalSlides = document.querySelectorAll('.gallery-slide').length;
 
@@ -121,14 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlideSpan.textContent = currentSlide + 1;
         
         // 버튼 활성화/비활성화
-        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+        galleryPrevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        galleryNextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
     }
 
     // 버튼 이벤트 리스너
-    prevBtn.addEventListener('click', () => moveSlide('prev'));
-    nextBtn.addEventListener('click', () => moveSlide('next'));
+    galleryPrevBtn.addEventListener('click', () => moveSlide('prev'));
+    galleryNextBtn.addEventListener('click', () => moveSlide('next'));
 
     // 초기 버튼 상태 설정
-    prevBtn.style.opacity = '0.5';
+    galleryPrevBtn.style.opacity = '0.5';
 }); 
