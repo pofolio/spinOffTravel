@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스핀오프 여행 일정</title>
-    
+
     <!-- Open Graph 메타 태그 -->
     <meta property="og:title" content="스핀오프 여행 일정">
     <meta property="og:description" content="스핀오프 여행 일정 및 준비물 정보">
-    <meta property="og:image" content="https://pofolio.github.io/spinOffTravel/img/camp/99380cf4-cda7-41bd-8f21-d664b31aa424.avif">
+    <meta property="og:image"
+        content="https://pofolio.github.io/spinOffTravel/img/camp/99380cf4-cda7-41bd-8f21-d664b31aa424.avif">
     <meta property="og:url" content="https://pofolio.github.io/spinOffTravel">
     <meta property="og:type" content="website">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -23,15 +26,15 @@
         </header>
 
         <nav class="tabs">
-            <button class="tab-btn active" data-tab="schedule" data-require-password="false">
+            <button class="tab-btn active" data-tab="schedule">
                 <i class="fas fa-calendar-alt"></i>
                 일정
             </button>
-            <button class="tab-btn" data-tab="shopping" data-require-password="true">
+            <button class="tab-btn" data-tab="shopping">
                 <i class="fas fa-shopping-cart"></i>
                 구매 항목
             </button>
-            <button class="tab-btn" data-tab="accommodation" data-require-password="true">
+            <button class="tab-btn" data-tab="accommodation">
                 <i class="fas fa-home"></i>
                 숙소
             </button>
@@ -49,7 +52,7 @@
                         <div class="location">
                             <p><i class="fas fa-map-marker-alt"></i> 메가MGC커피 동두천지행동원점</p>
                             <p class="address" data-clipboard="경기 동두천시 지행동 100-1">
-                                <i class="fas fa-copy"></i> 
+                                <i class="fas fa-copy"></i>
                                 경기 동두천시 지행동 100-1
                             </p>
                             <a href="https://naver.me/F9NIsLf6" target="_blank" class="map-link">
@@ -70,7 +73,7 @@
                         <div class="location">
                             <p><i class="fas fa-map-marker-alt"></i> 영랑호감자옹심이</p>
                             <p class="address" data-clipboard="강원 속초시 중앙로419번길 30 지하2층 208호">
-                                <i class="fas fa-copy"></i> 
+                                <i class="fas fa-copy"></i>
                                 강원 속초시 중앙로419번길 30 지하2층 208호
                             </p>
                             <a href="https://naver.me/GubJDQNb" target="_blank" class="map-link">
@@ -105,7 +108,7 @@
                                 <li>먼저 도착해서 술, 햇반, 물, 라면 등 저렴히 구매 가능한 물건을 구매 후 카톡에 업로드</li>
                                 <div class="location">
                                     <p class="address" data-clipboard="강원 고성군 토성면 중앙로 642-22">
-                                        <i class="fas fa-copy"></i> 
+                                        <i class="fas fa-copy"></i>
                                         강원 고성군 토성면 중앙로 642-22
                                     </p>
                                     <a href="https://naver.me/FV7YAt7V" target="_blank" class="map-link">
@@ -121,7 +124,7 @@
                                 <li>PX에서 구매 내역을 확인 후 고기, 밀키트 등을 추가 구매</li>
                                 <div class="location">
                                     <p class="address" data-clipboard="강원 속초시 설악금강대교로 12">
-                                        <i class="fas fa-copy"></i> 
+                                        <i class="fas fa-copy"></i>
                                         강원 속초시 설악금강대교로 12
                                     </p>
                                     <a href="https://naver.me/FsRsePEU" target="_blank" class="map-link">
@@ -143,13 +146,14 @@
                         <p>구비 물품: 헤어드라이어, 샴푸, 수건, 비누 등</p>
                         <div class="location">
                             <p class="address" data-clipboard="강원특별자치도 양양군 강현면 정암1길 35">
-                                <i class="fas fa-copy"></i> 
+                                <i class="fas fa-copy"></i>
                                 강원특별자치도 양양군 강현면 정암1길 35
                             </p>
                             <a href="https://naver.me/Gwp4QAju" target="_blank" class="map-link">
                                 <i class="fas fa-location-arrow"></i> 네이버 지도
                             </a>
-                            <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb447711" target="_blank" class="map-link">
+                            <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb447711"
+                                target="_blank" class="map-link">
                                 <i class="fas fa-home"></i> 에어비앤비
                             </a>
                         </div>
@@ -160,12 +164,6 @@
 
         <div class="tab-content" id="shopping">
             <section class="shopping-list">
-                <div class="shopping-controls">
-                    <button id="addItemBtn" class="add-item-btn">
-                        <i class="fas fa-plus"></i> 새 항목 추가
-                    </button>
-                </div>
-
                 <div class="shopping-table-container">
                     <table class="shopping-table">
                         <thead>
@@ -178,41 +176,99 @@
                             </tr>
                         </thead>
                         <tbody id="shoppingTableBody">
-                            <!-- 구글 시트에서 데이터를 불러와 동적으로 추가될 영역 -->
+                            <tr>
+                                <td>삼겹살</td>
+                                <td>1kg</td>
+                                <td>18,000원</td>
+                                <td>18,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>목살</td>
+                                <td>1kg</td>
+                                <td>15,000원</td>
+                                <td>15,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>소세지</td>
+                                <td>300g</td>
+                                <td>6,000원</td>
+                                <td>6,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>버섯</td>
+                                <td>100g</td>
+                                <td>2,000원</td>
+                                <td>2,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>양파</td>
+                                <td>1개</td>
+                                <td>2,000원</td>
+                                <td>2,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>깐마늘</td>
+                                <td>소포장</td>
+                                <td>2,000원</td>
+                                <td>2,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>쌈채소</td>
+                                <td>2팩</td>
+                                <td>3,500원</td>
+                                <td>7,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>김치</td>
+                                <td>500g</td>
+                                <td>5,000원</td>
+                                <td>5,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>밀키트 찌개류</td>
+                                <td>2팩</td>
+                                <td>8,000원</td>
+                                <td>16,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>라면</td>
+                                <td>3봉</td>
+                                <td>1,000원</td>
+                                <td>3,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>장류 세트</td>
+                                <td>1세트</td>
+                                <td>5,000원</td>
+                                <td>5,000원</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>소주</td>
+                                <td>20병</td>
+                                <td>1,800원</td>
+                                <td>36,000원</td>
+                                <td></td>
+                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td colspan="3" class="total-label">총 합계</td>
-                                <td id="totalAmount" class="total-amount">0원</td>
+                                <td id="totalAmount" class="total-amount">117,000원</td>
                                 <td></td>
                             </tr>
                         </tfoot>
                     </table>
-                </div>
-
-                <!-- 새 항목 추가 모달 -->
-                <div class="modal" id="addItemModal">
-                    <div class="modal-content">
-                        <h2>새 항목 추가</h2>
-                        <form id="addItemForm">
-                            <div class="form-group">
-                                <label for="itemName">물품명</label>
-                                <input type="text" id="itemName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="itemQuantity">수량</label>
-                                <input type="number" id="itemQuantity" min="1" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="itemPrice">개당 금액</label>
-                                <input type="number" id="itemPrice" min="0" required>
-                            </div>
-                            <div class="modal-buttons">
-                                <button type="button" class="cancel-btn">취소</button>
-                                <button type="submit" class="save-btn">저장</button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </section>
         </div>
@@ -232,49 +288,78 @@
                         <button class="slide-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
                         <div class="gallery-grid">
                             <div class="gallery-slide">
-                                <img src="img/camp/777946d5-8b49-43aa-9861-3d8f9c357fad.jpg" alt="숙소 이미지 1" class="gallery-img" loading="lazy">
-                                <img src="img/camp/99380cf4-cda7-41bd-8f21-d664b31aa424.avif" alt="숙소 이미지 2" class="gallery-img" loading="lazy">
-                                <img src="img/camp/96872fba-10a4-4134-9b31-a68f64128cc5.avif" alt="숙소 이미지 3" class="gallery-img" loading="lazy">
-                                <img src="img/camp/7893d86b-2988-4496-a7f6-d8009efc9410.avif" alt="숙소 이미지 4" class="gallery-img" loading="lazy">
+                                <img src="img/camp/777946d5-8b49-43aa-9861-3d8f9c357fad.jpg" alt="숙소 이미지 1"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/99380cf4-cda7-41bd-8f21-d664b31aa424.avif" alt="숙소 이미지 2"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/96872fba-10a4-4134-9b31-a68f64128cc5.avif" alt="숙소 이미지 3"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/7893d86b-2988-4496-a7f6-d8009efc9410.avif" alt="숙소 이미지 4"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/6941e94b-9b2d-4979-8b43-1d8fc6eac01d.avif" alt="숙소 이미지 5" class="gallery-img" loading="lazy">
-                                <img src="img/camp/917f6635-9add-4e16-a258-febecb7aab71.avif" alt="숙소 이미지 6" class="gallery-img" loading="lazy">
-                                <img src="img/camp/908f2ec1-549a-4547-8f0c-6b5747b7364c.avif" alt="숙소 이미지 7" class="gallery-img" loading="lazy">
-                                <img src="img/camp/821af2d0-e7f5-42fb-92b0-b8872b4c2d77.avif" alt="숙소 이미지 8" class="gallery-img" loading="lazy">
+                                <img src="img/camp/6941e94b-9b2d-4979-8b43-1d8fc6eac01d.avif" alt="숙소 이미지 5"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/917f6635-9add-4e16-a258-febecb7aab71.avif" alt="숙소 이미지 6"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/908f2ec1-549a-4547-8f0c-6b5747b7364c.avif" alt="숙소 이미지 7"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/821af2d0-e7f5-42fb-92b0-b8872b4c2d77.avif" alt="숙소 이미지 8"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/379d3e76-176d-4ad2-9b15-ca792374c19b.avif" alt="숙소 이미지 9" class="gallery-img" loading="lazy">
-                                <img src="img/camp/212e4955-d5b0-4954-96bc-4b7755cab02b.avif" alt="숙소 이미지 10" class="gallery-img" loading="lazy">
-                                <img src="img/camp/96b1ab27-1428-45b8-b604-e8474cf12cff.avif" alt="숙소 이미지 11" class="gallery-img" loading="lazy">
-                                <img src="img/camp/95fbab24-bf0d-466d-8bd1-d87b7ab8cdff.avif" alt="숙소 이미지 12" class="gallery-img" loading="lazy">
+                                <img src="img/camp/379d3e76-176d-4ad2-9b15-ca792374c19b.avif" alt="숙소 이미지 9"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/212e4955-d5b0-4954-96bc-4b7755cab02b.avif" alt="숙소 이미지 10"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/96b1ab27-1428-45b8-b604-e8474cf12cff.avif" alt="숙소 이미지 11"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/95fbab24-bf0d-466d-8bd1-d87b7ab8cdff.avif" alt="숙소 이미지 12"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/68f62f99-c551-4fdb-9de3-e2b664786e6c.avif" alt="숙소 이미지 13" class="gallery-img" loading="lazy">
-                                <img src="img/camp/54ea9352-8a17-4d74-a345-c85d5034439d.avif" alt="숙소 이미지 14" class="gallery-img" loading="lazy">
-                                <img src="img/camp/38d0880f-48fa-47bf-8511-54978bf93d2d.avif" alt="숙소 이미지 15" class="gallery-img" loading="lazy">
-                                <img src="img/camp/9b47b16d-f2af-4ab8-8b18-a78fedf70dc2.avif" alt="숙소 이미지 16" class="gallery-img" loading="lazy">
+                                <img src="img/camp/68f62f99-c551-4fdb-9de3-e2b664786e6c.avif" alt="숙소 이미지 13"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/54ea9352-8a17-4d74-a345-c85d5034439d.avif" alt="숙소 이미지 14"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/38d0880f-48fa-47bf-8511-54978bf93d2d.avif" alt="숙소 이미지 15"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/9b47b16d-f2af-4ab8-8b18-a78fedf70dc2.avif" alt="숙소 이미지 16"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/4c7a5ad4-8176-4d39-b002-7c890442bc7a.avif" alt="숙소 이미지 17" class="gallery-img" loading="lazy">
-                                <img src="img/camp/3c89c609-9e10-4796-a0c3-5448fe6ad206.avif" alt="숙소 이미지 18" class="gallery-img" loading="lazy">
-                                <img src="img/camp/3bad2f77-35ef-4919-b2bd-c158e6c1de83.avif" alt="숙소 이미지 19" class="gallery-img" loading="lazy">
-                                <img src="img/camp/1da3d7b1-3889-4556-9ed1-5114a6c9ee67.avif" alt="숙소 이미지 20" class="gallery-img" loading="lazy">
+                                <img src="img/camp/4c7a5ad4-8176-4d39-b002-7c890442bc7a.avif" alt="숙소 이미지 17"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/3c89c609-9e10-4796-a0c3-5448fe6ad206.avif" alt="숙소 이미지 18"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/3bad2f77-35ef-4919-b2bd-c158e6c1de83.avif" alt="숙소 이미지 19"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/1da3d7b1-3889-4556-9ed1-5114a6c9ee67.avif" alt="숙소 이미지 20"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/e7553d23-b2db-4859-a5fb-a27cd9663d01.avif" alt="숙소 이미지 21" class="gallery-img" loading="lazy">
-                                <img src="img/camp/d95d8562-2a7c-40e5-833e-38d9b5daaf21.avif" alt="숙소 이미지 22" class="gallery-img" loading="lazy">
-                                <img src="img/camp/cf7223e0-3a73-4a73-ab1f-b4bc8b52b72b.avif" alt="숙소 이미지 23" class="gallery-img" loading="lazy">
-                                <img src="img/camp/cdb31908-f9a1-4665-a40c-01852e288348.avif" alt="숙소 이미지 24" class="gallery-img" loading="lazy">
+                                <img src="img/camp/e7553d23-b2db-4859-a5fb-a27cd9663d01.avif" alt="숙소 이미지 21"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/d95d8562-2a7c-40e5-833e-38d9b5daaf21.avif" alt="숙소 이미지 22"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/cf7223e0-3a73-4a73-ab1f-b4bc8b52b72b.avif" alt="숙소 이미지 23"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/cdb31908-f9a1-4665-a40c-01852e288348.avif" alt="숙소 이미지 24"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/c3d1615b-c48f-41fe-9a49-b664f1ec3350.avif" alt="숙소 이미지 25" class="gallery-img" loading="lazy">
-                                <img src="img/camp/bc271a42-cc24-47cb-800c-8628fdaf4016.avif" alt="숙소 이미지 26" class="gallery-img" loading="lazy">
-                                <img src="img/camp/b7677e59-33a8-47a1-938c-6b66a0451de1.avif" alt="숙소 이미지 27" class="gallery-img" loading="lazy">
-                                <img src="img/camp/b09e3601-fcfe-4b09-9463-6fa77f6685a6.avif" alt="숙소 이미지 28" class="gallery-img" loading="lazy">
+                                <img src="img/camp/c3d1615b-c48f-41fe-9a49-b664f1ec3350.avif" alt="숙소 이미지 25"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/bc271a42-cc24-47cb-800c-8628fdaf4016.avif" alt="숙소 이미지 26"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/b7677e59-33a8-47a1-938c-6b66a0451de1.avif" alt="숙소 이미지 27"
+                                    class="gallery-img" loading="lazy">
+                                <img src="img/camp/b09e3601-fcfe-4b09-9463-6fa77f6685a6.avif" alt="숙소 이미지 28"
+                                    class="gallery-img" loading="lazy">
                             </div>
                             <div class="gallery-slide">
-                                <img src="img/camp/a5b82254-bc54-4d0f-b74c-44de6eb755d8.avif" alt="숙소 이미지 29" class="gallery-img" loading="lazy">
+                                <img src="img/camp/a5b82254-bc54-4d0f-b74c-44de6eb755d8.avif" alt="숙소 이미지 29"
+                                    class="gallery-img" loading="lazy">
                             </div>
                         </div>
                         <button class="slide-btn next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -289,7 +374,8 @@
                         <i class="fas fa-map"></i>
                         네이버 지도에서 보기
                     </a>
-                    <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb447711" target="_blank" class="link-btn">
+                    <a href="https://www.airbnb.co.kr/rooms/36436795?check_in=2025-05-03&check_out=2025-05-04&guests=1&adults=8&s=67&unique_share_id=e40c9761-2f67-48f8-938f-20d4bb447711"
+                        target="_blank" class="link-btn">
                         <i class="fab fa-airbnb"></i>
                         에어비앤비에서 보기
                     </a>
@@ -297,44 +383,51 @@
 
                 <div class="accommodation-details">
                     <div class="detail-item">
+                        <h3><i class="fas fa-users"></i> 숙소 정보</h3>
+                        <ul>
+                            <li>최대 인원: 12명</li>
+                            <li>침실: 2개</li>
+                            <li>침대: 1개</li>
+                            <li>욕실: 2개</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-item">
                         <h3><i class="fas fa-clock"></i> 체크인/체크아웃</h3>
-                        <p>체크인: 15:00</p>
-                        <p>체크아웃: 다음날 11:00</p>
-                    </div>
-
-                    <div class="detail-item">
-                        <h3><i class="fas fa-bed"></i> 숙소 시설</h3>
                         <ul>
-                            <li>침대 4개</li>
-                            <li>화장실 2개</li>
-                            <li>주방 시설</li>
-                            <li>무료 주차</li>
+                            <li>체크인: 오후 3:00 이후</li>
+                            <li>체크아웃: 오전 11:00 전까지</li>
                         </ul>
                     </div>
 
                     <div class="detail-item">
-                        <h3><i class="fas fa-info-circle"></i> 주의사항</h3>
+                        <h3><i class="fas fa-map-marker-alt"></i> 주변 관광지</h3>
                         <ul>
-                            <li>실내 흡연 금지</li>
-                            <li>반려동물 동반 불가</li>
-                            <li>22시 이후 소음 주의</li>
+                            <li>정암해수욕장 (도보 5분 이내)</li>
+                            <li>물치해수욕장, 낙산해수욕장, 낙산사, 양양 전통시장 (차로 5분 이내)</li>
+                            <li>설악산, 아바이마을, 이마트, 만석닭강정, 봉포 머구리횟집 (차로 10분 이내)</li>
+                            <li>속초 중앙시장, 영랑호, 동명항 (차로 15분 이내)</li>
                         </ul>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3><i class="fas fa-bus"></i> 교통편</h3>
+                        <div class="transportation">
+                            <h4>1. 속초 고속버스 터미널 도착시</h4>
+                            <p>양양방면 고속버스터미널에서 9번, 9번-1 버스 승차 → 8정거장 뒤 정암1리 승차장에서 하차 → 마을 입구 방향으로 250m 도보로 이동</p>
+
+                            <h4>2. 속초 시외버스 터미널 도착시</h4>
+                            <p>양양방면 수복탑에서 9번, 9번-1 버스 승차 → 18정거장 뒤 정암1리 승차장에서 하차 → 마을 입구 방향으로 250m 도보로 이동</p>
+
+                            <h4>3. 양양 시외버스 터미널 도착시</h4>
+                            <p>속초방면 시외버스터미널에서 9번, 9번-1 버스 승차 → 8정거장 뒤 정암1리 승차장에서 하차 → 마을 입구 방향으로 250m 도보로 이동</p>
+
+                            <h4>4. 자가용 이용시</h4>
+                            <p>강원도 양양군 강현면 정암1길 35 주소입력 (설악바다나무로펜션)</p>
+                        </div>
                     </div>
                 </div>
             </section>
-        </div>
-
-        <!-- 비밀번호 모달 -->
-        <div class="password-modal" id="passwordModal">
-            <div class="modal-content">
-                <h2>🔒 콘텐츠 잠금</h2>
-                <p class="lock-message">비밀번호를 입력하세요</p>
-                <div class="password-input-container">
-                    <input type="tel" id="passwordInput" placeholder="비밀번호를 입력하세요" maxlength="4" pattern="[0-9]*" inputmode="numeric">
-                    <button id="submitPassword">확인</button>
-                </div>
-                <p class="error-message" style="display: none; color: red;">비밀번호가 일치하지 않습니다.</p>
-            </div>
         </div>
 
         <!-- 이미지 뷰어 모달 -->
@@ -346,9 +439,9 @@
         </div>
 
         <footer>
-            <p>회비 미 입금자 입금 요망</p>
         </footer>
     </div>
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
